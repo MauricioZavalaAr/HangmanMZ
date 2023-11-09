@@ -1,0 +1,25 @@
+.letter {
+  font-size: 2rem; 
+  text-align: center;
+  display: inline-block;
+  width: 1.5rem; 
+  margin-right: 0.5rem; 
+}
+
+.hangman-image {
+  width: 300px; 
+  height: auto;
+  margin-top: 20px; 
+}
+
+.dark-red-background {
+  background-color: darkred;
+}
+
+.darkgray {
+  background-color: darkgray;
+}
+
+.dark-blue-background {
+  background-color: darkblue;
+}
