@@ -65,6 +65,7 @@ const App: React.FC = () => {
   return (
     <Flex
       direction="column"
+      marginLeft={'40%'}
       alignItems="center"
       justifyContent="center"
       height="100vh"
@@ -86,7 +87,8 @@ const App: React.FC = () => {
             </span>
           ))}
         </div>
-        <Flex direction="row" wrap="wrap">
+        <Flex alignItems="center" direction="row" wrap="wrap" align="center"
+      justifyContent="center">
           {Array.from({ length: 26 }, (_, index) => String.fromCharCode(97 + index)).map(
             (letter) => (
               <Button
@@ -112,21 +114,22 @@ const App: React.FC = () => {
         </Flex>
         <div className="game-status">
         {isWon && !isGameOver && (
-  <>
+  <Flex alignItems="center"
+  justifyContent="center">
     <Text fontSize="xl" mb={2}>
       Congratulations! You've won!
     </Text>
     <Text fontSize="lg" mb={2}>
       Well done! You've successfully guessed the word.
     </Text>
-    <Button onClick={initializeGame} size="lg">
+    <Button onClick={initializeGame} size="lg" >
       Play Again
     </Button>
-  </>
+  </Flex>
           )}
           {isGameOver && (
             <>
-              <Text fontSize="xl" mb={2}>
+              <Text fontSize="xl" mb={2} color={'white'}>
                 Game over! The word was: {selectedWord}
               </Text>
               <Button onClick={initializeGame} size="lg">
