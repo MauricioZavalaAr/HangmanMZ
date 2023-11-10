@@ -65,8 +65,8 @@ const App: React.FC = () => {
   return (
     <Flex
       direction="column"
-      align="center"
-      justify="center"
+      alignItems="center"
+      justifyContent="center"
       height="100vh"
       className={isWon ? 'dark-blue-background' : ''}
     >
