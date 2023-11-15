@@ -83,7 +83,7 @@ const App: React.FC = () => {
       className={isWon ? 'dark-blue-background' : ''}
     >
       <img
-        src={`../src/images/hangman0.jpg`}
+        src={'../src/images/hangman0.jpg'}
         alt={`Hangman Stage ${hangmanStage}`}
         className="hangman-image"
       />
