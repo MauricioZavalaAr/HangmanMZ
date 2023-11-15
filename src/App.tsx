@@ -32,7 +32,6 @@ const App: React.FC = () => {
       setHangmanStage(0);
       setIsWon(false);
       document.body.style.backgroundColor = 'white';
-      const hS = '../src/images/hangman0.jpg';
     } catch (error) {
       console.error('Error initializing game:', error);
     }
@@ -72,7 +71,7 @@ const App: React.FC = () => {
     }
   };
   
-  
+  const hS = `../src/images/hangman${hangmanStage}.jpg`
   const isGameOver = remainingLives === 0;
   return (
     <Flex
@@ -84,7 +83,7 @@ const App: React.FC = () => {
       className={isWon ? 'dark-blue-background' : ''}
     >
       <img
-        src={'../src/images/hangman0.jpg'}
+        src={hS}
         alt={`Hangman Stage ${hangmanStage}`}
         className="hangman-image"
       />
