@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import jsonData from './apis/randomWords.json'; 
 import { Button, Flex, VStack, Text } from '@chakra-ui/react';
+import hangman0 from '../src/images/hangman0.jpg'
+import hangman1 from '../src/images/hangman1.jpg'
+import hangman2 from '../src/images/hangman2.jpg'
+import hangman3 from '../src/images/hangman3.jpg'
+import hangman4 from '../src/images/hangman4.jpg'
+import hangman5 from '../src/images/hangman5.jpg'
+
 const App: React.FC = () => {
   const [selectedWord, setSelectedWord] = useState<string>('');
   const [displayedWord, setDisplayedWord] = useState<string[]>([]);
@@ -11,6 +18,7 @@ const App: React.FC = () => {
   const [hangmanStage, setHangmanStage] = useState<number>(0);
   const [isWon, setIsWon] = useState<boolean>(false);
   
+  ///CHANGE SO I WORKS WITH IMPORTS
 
   const initializeGame = () => {
     try {
@@ -24,6 +32,7 @@ const App: React.FC = () => {
       setHangmanStage(0);
       setIsWon(false);
       document.body.style.backgroundColor = 'white';
+      const hS = '../src/images/hangman0.jpg';
     } catch (error) {
       console.error('Error initializing game:', error);
     }
@@ -53,14 +62,17 @@ const App: React.FC = () => {
     } else {
       setRemainingLives(remainingLives - 1);
       setHangmanStage(Math.min(hangmanStage + 1, 5)); 
+      if(hangmanStage === 0){
+        const hS = hangman0;
+      }
 
       const colorShades = ['#FF0000', '#CC0000', '#990000', '#660000', '#330000', '#000000'];
       const mistakeColor = colorShades[hangmanStage];
       document.body.style.backgroundColor = mistakeColor;
     }
   };
-
- 
+  
+  
   const isGameOver = remainingLives === 0;
   return (
     <Flex
@@ -72,7 +84,7 @@ const App: React.FC = () => {
       className={isWon ? 'dark-blue-background' : ''}
     >
       <img
-        src={`../src/images/hangman${hangmanStage}.jpg`}
+        src={'../src/images/hangman0.jpg'}
         alt={`Hangman Stage ${hangmanStage}`}
         className="hangman-image"
       />
