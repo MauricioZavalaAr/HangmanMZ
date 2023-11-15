@@ -71,7 +71,7 @@ const App: React.FC = () => {
     }
   };
   
-  const hS = `../src/images/hangman${hangmanStage}.jpg`
+  const hS = `../src/images/hangman0.jpg`
   const isGameOver = remainingLives === 0;
   return (
     <Flex
