@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import jsonData from './apis/randomWords.json'; 
 import { Button, Flex, VStack, Text } from '@chakra-ui/react';
-import hangman0 from '../src/images/hangman0.jpg'
-import hangman1 from '../src/images/hangman1.jpg'
-import hangman2 from '../src/images/hangman2.jpg'
-import hangman3 from '../src/images/hangman3.jpg'
-import hangman4 from '../src/images/hangman4.jpg'
-import hangman5 from '../src/images/hangman5.jpg'
 
 const App: React.FC = () => {
   const [selectedWord, setSelectedWord] = useState<string>('');
@@ -61,9 +55,7 @@ const App: React.FC = () => {
     } else {
       setRemainingLives(remainingLives - 1);
       setHangmanStage(Math.min(hangmanStage + 1, 5)); 
-      if(hangmanStage === 0){
-        const hS = hangman0;
-      }
+
 
       const colorShades = ['#FF0000', '#CC0000', '#990000', '#660000', '#330000', '#000000'];
       const mistakeColor = colorShades[hangmanStage];
@@ -83,7 +75,7 @@ const App: React.FC = () => {
       className={isWon ? 'dark-blue-background' : ''}
     >
       <img
-        src={'../src/images/hangman0.jpg'}
+        src={`../src/images/hangman${hangmanStage}.jpg`}
         alt={`Hangman Stage ${hangmanStage}`}
         className="hangman-image"
       />
